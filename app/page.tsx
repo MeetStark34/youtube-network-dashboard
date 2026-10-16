@@ -165,7 +165,7 @@ export default function OverviewPage() {
       <div className="sticky sticky-surface top-12 z-20 -mx-4 mb-3 flex items-center justify-between gap-3 border-y border-line/80 px-4 py-2 sm:-mx-6 sm:px-6 lg:top-0 lg:-mx-8 lg:px-8">
         <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-[0.08em] text-ink">Latest uploads</p>
-          <p className="hidden text-[11px] text-muted sm:block">Filter every dashboard metric</p>
+          <p className="hidden text-[11px] text-muted sm:block">Type modes exclude ambiguous uploads</p>
         </div>
         <VideoTypeToggle value={videoType} onChange={setVideoType} label="Filter latest uploads by type" />
       </div>

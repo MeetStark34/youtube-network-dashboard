@@ -29,7 +29,7 @@ function AnalyticsContent() {
   return (
     <>
       <div className="mb-4 flex justify-end"><VideoTypeToggle value={videoType} onChange={setVideoType} /></div>
-      <Section id="compare" title="Main channel comparison" description="The four main channels, scaled to the leader in each chart.">
+      <Section id="compare" title="Main channel comparison" description="Upload-based comparisons follow the selected type; subscriber counts and lifetime channel views remain aggregate totals.">
         <div className="grid gap-5 md:grid-cols-2">
           <BarCompare
             title="Subscribers"
