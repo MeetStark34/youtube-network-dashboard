@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* Design tokens. Tailwind v4 turns each --color-* into bg-*, text-*, border-* utilities. */
+@theme {
+  --color-bg: #090c10;
+  --color-surface: #11161c;
+  --color-surface-2: #182029;
+  --color-surface-3: #202a35;
+  --color-line: #2a3541;
+  --color-line-strong: #43515f;
+  --color-ink: #f1f4f7;
+  --color-muted: #b2bdc8;
+  --color-faint: #8e9aa7;
+  --color-accent: #b2cbe3;
+  --color-good: #94c9a8;
+  --color-warn: #d8b878;
+  --radius-panel: 1.125rem;
+  --radius-control: 0.75rem;
+  --spacing-panel: 0.75rem;
+  --spacing-section: 1.25rem;
+  --blur-glass: 16px;
+  --shadow-glass: 0 18px 46px rgb(0 0 0 / 0.24);
+}
+
+@theme inline {
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --surface-glass: rgb(17 22 28 / 0.78);
+  --surface-sticky: rgb(9 12 16 / 0.86);
+  --border-glass: rgb(226 235 244 / 0.08);
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-bg);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse at 10% 0%, rgb(76 99 120 / 0.13), transparent 36rem),
+    radial-gradient(ellipse at 95% 28%, rgb(76 85 99 / 0.08), transparent 34rem);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+.glass-panel {
+  border: 1px solid var(--border-glass);
+  background: var(--surface-glass);
+  box-shadow: var(--shadow-glass);
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  backdrop-filter: blur(var(--blur-glass));
+}
+
+.sticky-surface {
+  background: var(--surface-sticky);
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  backdrop-filter: blur(var(--blur-glass));
+}
+
+@keyframes dashboard-enter {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-enter {
+  animation: dashboard-enter 220ms ease-out both;
+}
+
+:focus-visible {
+  outline: 2px solid #c5ddf2;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgb(178 203 227 / 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-enter {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
