@@ -68,7 +68,7 @@ export const RANKING_CATEGORIES: ReadonlyArray<{
   {
     id: "engagement",
     label: "Engagement rate",
-      description: "(Likes + comments) ÷ views on the most recent upload matching the selected content type.",
+    description: "(Likes + comments) ÷ views on the most recent upload matching the selected content type.",
   },
 ];
 
